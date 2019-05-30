@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Flexbox</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-transform: uppercase;
+    font-family: serif;
+    color: #fff;
+}
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+p {
+    margin: 0;
+}
+.wrapper > * {
+  padding: 15px;
+}
+.header {
+    background: #FF4500; 
+}
+.main { 
+    background: #00BFFF; 
+}
+.aside-left { 
+    background: #228B22; 
+}
+.aside-right { 
+    background: #FFB6C1; 
+}
+.footer  { 
+    background: #9370DB; 
+}
+.wrapper > * {
+  flex: 1 100%;
+}
+@media all and (max-width: 767px) {
+}
+@media (min-width: 768px) and (max-width: 991px){
+/*    .footer,
+    .aside-left,
+    .header {
+        flex: 1 100%;
+    }*/
+    .header {
+        order: 1;
+    }
+    .main {
+        flex: 3 0;
+        order: 2;
+    }
+    .aside-right { 
+        flex: 1 0;
+        order: 3;
+    }
+    .aside-left {
+        order: 4;
+    }
+    .footer {
+        order: 5;
+    }
+}
+@media (min-width: 992px) {
+    .header {
+        order: 1;
+    }
+    .aside-left {
+        order: 2;
+        flex: 1 0;
+    }
+    .main {
+        flex: 4 0;
+        order: 3;
+    }
+    .aside-right { 
+        order: 4;
+        flex: 1 0;
+    }
+    .footer {
+        order: 5;
+    }
+}
+</style>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">Header</header>
+            <article class="main">
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>  
+            </article>
+            <aside class="aside aside-left">Aside Left</aside>
+            <aside class="aside aside-right">Aside Right</aside>
+            <footer class="footer">Footer</footer>
+        </div>        
+    </body>
+</html>
